@@ -17,9 +17,10 @@
             <ColumnDefinition Width="174*"/>
             <ColumnDefinition Width="232*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="userId" HorizontalAlignment="Left" Margin="84,83,0,0" TextWrapping="Wrap" Text="qw5414" VerticalAlignment="Top" Height="45" Width="370" InputScope="Text" Grid.Column="3"/>
-        <TextBox x:Name="password" HorizontalAlignment="Left" Margin="84,180,0,0" TextWrapping="Wrap" Text="1234" VerticalAlignment="Top" Height="43" Width="370" Grid.Column="3"/>
+        <TextBox x:Name="userId" HorizontalAlignment="Left" Margin="84,83,0,0" TextWrapping="Wrap" Text="rambo" VerticalAlignment="Top" Height="45" Width="370" InputScope="Text" Grid.Column="3"/>
+        <TextBox x:Name="password" HorizontalAlignment="Left" Margin="84,180,0,0" TextWrapping="Wrap" Text="123123" VerticalAlignment="Top" Height="43" Width="370" Grid.Column="3"/>
         <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="2,85,0,0" VerticalAlignment="Top" Height="138" Width="162" Grid.Column="5" RenderTransformOrigin="1.964,0.51" Click="LoginButton_Click"/>
+        <TextBlock x:Name="Login_check" Grid.Column="3" HorizontalAlignment="Left" Margin="142,388,0,0" TextWrapping="Wrap" Text="로그인이 안되었어" VerticalAlignment="Top" Grid.ColumnSpan="4" Height="146" Width="632" FontSize="48"/>
 
     </Grid>
 </Page>

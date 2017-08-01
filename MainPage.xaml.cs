@@ -22,6 +22,7 @@ namespace Login_form
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -29,7 +30,27 @@ namespace Login_form
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if(userId.Text == "rambo" && password.Text == "123123")
+            {
+                this.SetValue("snsd");
+                this.SetValuePassword("loves");
+                Login_check.Text = "로그인완료";
+            }
+            else
+            {
+                Login_check.Text = "아이디 비밀번호 틀리다 쨔샤";
+            }
         }
-	}
+
+        private void SetValue(string Id)
+        {
+            userId.Text = Id;
+        }
+        
+        private void SetValuePassword(string inputpw)
+        {
+            password.Text = inputpw;
+        }
+
+    }
 }
