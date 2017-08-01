@@ -24,16 +24,7 @@ namespace Login_form
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if(userId.Text == "rambo" && password.Text == "123123")
-            {
-                this.SetValue("Laboum");
-                this.SetValuePassword("loves");
-                Login_check.Text = "로그인완료";
-            }
-            else
-            {
-                Login_check.Text = "아이디 비밀번호 틀리다 쨔샤";
-            }
+            this.DoLogin(userId.Text, password.Text);
         }
 
         private void SetValue(string Id)
@@ -46,5 +37,18 @@ namespace Login_form
             password.Text = inputpw;
         }
 
+        private void DoLogin (string Id, string password)
+        {
+            if (Id == "rambo" && password == "123123")
+            {
+                this.SetValue("Laboum");
+                this.SetValuePassword("loves");
+                Login_check.Text = "로그인완료";
+            }
+            else
+            {
+                Login_check.Text = "아이디 비밀번호 틀리다 쨔샤";
+            }
+        }
     }
 }
