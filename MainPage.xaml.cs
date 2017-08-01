@@ -32,7 +32,7 @@ namespace Login_form
         {
             if(userId.Text == "rambo" && password.Text == "123123")
             {
-                this.SetValue("snsd");
+                this.SetValue("Laboum");
                 this.SetValuePassword("loves");
                 Login_check.Text = "로그인완료";
             }
