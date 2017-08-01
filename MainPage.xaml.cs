@@ -27,10 +27,9 @@ namespace Login_form
             this.InitializeComponent();
         }
 
-		private void LoginButton_Click(object sender, RoutedEventArgs e)
-		{
-			
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
 
-		}
+        }
 	}
 }
