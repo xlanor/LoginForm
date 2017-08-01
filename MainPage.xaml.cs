@@ -47,7 +47,7 @@ namespace Login_form
             }
             else
             {
-                Login_check.Text = "아이디 비밀번호 틀리다 쨔샤";
+                Login_check.Text = "아이디 혹은 비밀번호가 틀린 것 같습니다가 아니라 틀렷습니다. 난 확실하거든";
             }
         }
     }
