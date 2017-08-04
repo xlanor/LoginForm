@@ -32,13 +32,13 @@ namespace Login_form
         {
             userId.Text = Id;
         }
-        
+
         private void SetValuePassword(string inputpw)
         {
             password.Text = inputpw;
         }
 
-        private void DoLogin (string Id, string password)
+        private void DoLogin(string Id, string password)
         {
             if (Id == "rambo" && password == "123123")
             {
@@ -56,7 +56,7 @@ namespace Login_form
             }
         }
 
-        public string getRandom (int length, string format = "alnum")
+        public string getRandom(int length, string format = "alnum")
         {
             int entropyRequiredBytes = 0;
             if (format != "alnum")
