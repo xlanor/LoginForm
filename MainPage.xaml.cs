@@ -40,14 +40,15 @@ namespace Login_form
 
         private void DoLogin(string Id, string password)
         {
-            if (Id == "rambo" && password == "123123")
-            {
-                var getRandomStirng = this.getRandom(22, "alnum");
-                var sprintfString = String.Format("%02d", 10);
-                var salt = String.Format("$2y${0}{1}", sprintfString, getRandomStirng);
+            string dbPassword = "123123";
+            string salt = "$2a$13$/laboumskeyvaluessou";
+            string userHashPassword = hashPassword(dbPassword, salt);
+            string inputPassword = hashPassword(password, salt);
 
-                this.SetValue("SNSD");
-                this.SetValuePassword("loves");
+            if (Id == "rambo" && userHashPassword == GetInputPassword(inputPassword))
+            {
+                this.SetValue("rambo");
+                this.SetValuePassword("123123");
                 Login_check.Text = "로그인완료";
             }
             else
@@ -56,25 +57,14 @@ namespace Login_form
             }
         }
 
-        public string getRandom(int length, string format = "alnum")
+        private static string GetInputPassword(string inputPassword)
         {
-            int entropyRequiredBytes = 0;
-            if (format != "alnum")
-            {
-                int entropyRequired = 0;
-            }
-            else
-            {
-                Random Random = new Random();
+            return inputPassword;
+        }
 
-                int entropyRequired = (int)Math.Ceiling((decimal)length * 3 / 4);
-                for (int i = 0; i <= entropyRequiredBytes; i++)
-                {
-                    var entropy = (int)Random.Next(0, 65536);
-                }
-            }
-
-            return "merong";
+        public static string hashPassword(string password, string salt)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password, salt);
         }
     }
 }
