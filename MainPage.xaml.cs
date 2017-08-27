@@ -41,11 +41,16 @@ namespace Login_form
         private void DoLogin(string Id, string password)
         {
             string dbPassword = "123123";
-            string salt = "$2a$13$/laboumskeyvaluessou";
+            string salt = "$2a$13$/laboumskeyvaluessoasdu";
             string userHashPassword = hashPassword(dbPassword, salt);
             string inputPassword = hashPassword(password, salt);
 
-            if (Id == "rambo" && userHashPassword == GetInputPassword(inputPassword))
+            PasswordComparison(Id, userHashPassword, inputPassword);
+        }
+
+        private void PasswordComparison(string Id, string userHashPassword, string inputPassword)
+        {
+            if (Id == "rambo" && userHashPassword == inputPassword)
             {
                 this.SetValue("rambo");
                 this.SetValuePassword("123123");
@@ -55,11 +60,6 @@ namespace Login_form
             {
                 Login_check.Text = "아이디 혹은 비밀번호가 틀린 것 같습니다가 아니라 틀렷습니다. 난 확실하거든";
             }
-        }
-
-        private static string GetInputPassword(string inputPassword)
-        {
-            return inputPassword;
         }
 
         public static string hashPassword(string password, string salt)
